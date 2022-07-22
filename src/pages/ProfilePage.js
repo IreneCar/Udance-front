@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-
-
 import { getProfileService } from "../services/profile.services.js";
 import { Link} from 'react-router-dom';
 
 
-function ProfilePage(props) {
+function ProfilePage() {
     const [ profile, setProfile ] = useState("profile");
 
 	const getProfile = async () => {
