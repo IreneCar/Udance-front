@@ -2,15 +2,15 @@ import service from "./service";
 
 const URL = "/lessons";
 
-const getAllProjectsService = () => {
+const getAllLessonsService = () => {
   return service.get(`${URL}/`);
 };
-const getProjectDetailsService = (id) => {
+const getLessonDetailsService = (id) => {
   return service.get(`${URL}/${id}`);
 };
 
-const addNewProjectService = (newProject) => {
-  return service.post(`${URL}/`, newProject);
+const addNewLessonService = (newLesson) => {
+  return service.post(`${URL}/`, newLesson);
 };
 const joinLessonService = (id) => {
   return service.post(`${URL}/${id}/join`);
@@ -20,9 +20,9 @@ const dropOffLessonService = (id) => {
 };
 
 export {
-  getAllProjectsService,
-  addNewProjectService,
-  getProjectDetailsService,
+  getAllLessonsService,
+  addNewLessonService,
+  getLessonDetailsService,
   joinLessonService,
   dropOffLessonService
 

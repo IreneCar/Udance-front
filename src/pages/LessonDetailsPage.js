@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { getProjectDetailsService } from '../services/project.services';
-import { joinLessonService } from "../services/project.services.js";
-import { dropOffLessonService } from "../services/project.services.js";
+import { getLessonDetailsService } from '../services/lesson.services';
+import { joinLessonService } from "../services/lesson.services.js";
+import { dropOffLessonService } from "../services/lesson.services.js";
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 
-function ProjectDetailsPage(props) {
+function LessonDetailsPage(props) {
 	const navigate = useNavigate();
 	const [ lesson, setLesson ] = useState(null);
 	const { id } = useParams();
@@ -14,7 +14,7 @@ function ProjectDetailsPage(props) {
 	const getProject = async () => {
 		localStorage.getItem('authToken');
 		try {
-			const response = await getProjectDetailsService(id);
+			const response = await getLessonDetailsService(id);
 			setLesson(response.data);
 		} catch (err) {
 			console.log(err);
@@ -79,4 +79,4 @@ function ProjectDetailsPage(props) {
 	);
 }
 
-export default ProjectDetailsPage;
+export default LessonDetailsPage;

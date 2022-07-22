@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { addNewProjectService } from "../services/project.services.js";
+import { addNewLessonService } from "../services/lesson.services.js";
 import { useContext } from "react"; // <== IMPORT
-import { AuthContext } from "./../context/auth.context"; // <== IMPORT
+import { AuthContext } from "../context/auth.context"; // <== IMPORT
 
 
 
-function AddProject(props) {
+function AddLesson(props) {
   const { user } = useContext(AuthContext);
 
   const teacher = user.name;
@@ -41,7 +41,7 @@ function AddProject(props) {
 
     // Send the token through the request "Authorization" Headers
     try {
-      await addNewProjectService(newLesson);
+      await addNewLessonService(newLesson);
     
       setTitle("");
       setStyles("");
@@ -62,7 +62,7 @@ function AddProject(props) {
 
   return (
     <div className="AddProject">
-      <h3>Add Project</h3>
+      <h3>Add Lesson</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
@@ -160,4 +160,4 @@ function AddProject(props) {
   );
 }
 
-export default AddProject;
+export default AddLesson;

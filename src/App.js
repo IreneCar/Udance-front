@@ -2,8 +2,11 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage";
-import ProjectListPage from "./pages/ProjectListPage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+import LessonListPage from "./pages/LessonListPage";
+import LessonDetailsPage from "./pages/LessonDetailsPage";
+import ProfilePage from "./pages/ProfilePage";
+import RecLessonsPage from "./pages/RecLessonsPage";
+import GivLessonsPage from "./pages/GivLessonsPage";
 
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
@@ -22,7 +25,7 @@ function App() {
 					exact
 					path="/lessons"
 					element={
-					<ProjectListPage />
+					<LessonListPage />
 				
 					}
 				/>
@@ -32,10 +35,42 @@ function App() {
 					path="/lessons/:id"
 					element={
 						<PrivateRoute>
-							<ProjectDetailsPage />
+							<LessonDetailsPage />
 						</PrivateRoute>
 					}
 				/>
+        		<Route
+					exact
+					path="/profile"
+					element={
+						<PrivateRoute>
+							<ProfilePage />
+						</PrivateRoute>
+					}
+				/>
+
+				<Route
+					exact
+					path="/profile/given"
+					element={
+						<PrivateRoute>
+							<GivLessonsPage />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					exact
+					path="/profile/received"
+					element={
+						<PrivateRoute>
+							<RecLessonsPage />
+						</PrivateRoute>
+					}
+				/>
+
+
+
+
 
           <Route
             exact
