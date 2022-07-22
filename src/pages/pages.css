@@ -1,0 +1,32 @@
+.rombo {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.rombo-wrap {
+  filter: drop-shadow(0px 6px 20px #aba7cc);
+}
+
+.container-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.container-home h3 {
+  color: #3366ff;
+  font-size: 25px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.container-home p {
+  color: #464555;
+  font-size: 12px;
+  margin-left: 20px;
+  text-align: left;
+}

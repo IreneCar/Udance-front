@@ -1,0 +1,31 @@
+.navBarStyle {
+  background: white;
+  color: rgb(188, 22, 22);
+  padding: 0px 20px;
+  box-shadow: #aba7cc 0px 6px 20px 0px;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.navBarLink {
+  text-decoration: none;
+  color: #3366ff;
+  font-size: 12px;
+  margin: 0px 5px 0px 5px;
+}
+
+.wrap-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+}
+
+.space-between {
+  margin: 0px 5px 0px 5px;
+}
