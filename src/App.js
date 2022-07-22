@@ -12,6 +12,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
+import AddLesson from "./components/AddLesson";
 
 function App() {
   return (
@@ -19,58 +20,53 @@ function App() {
       <div className="container">
         <Navbar />
 
-			<Routes>
-				<Route exact path="/" element={<HomePage/>} />
-				<Route
-					exact
-					path="/lessons"
-					element={
-					<LessonListPage />
-				
-					}
-				/>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/lessons" element={<LessonListPage />} />
 
-				<Route
-					exact
-					path="/lessons/:id"
-					element={
-						<PrivateRoute>
-							<LessonDetailsPage />
-						</PrivateRoute>
-					}
-				/>
-        		<Route
-					exact
-					path="/profile"
-					element={
-						<PrivateRoute>
-							<ProfilePage />
-						</PrivateRoute>
-					}
-				/>
+          <Route
+            exact
+            path="/lessons/:id"
+            element={
+              <PrivateRoute>
+                <LessonDetailsPage />
+              </PrivateRoute>
+            }
+          />
+          {/* <Route
+            exact
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <ProfilePage />
+              </PrivateRoute>
+            }
+          />
 
-				<Route
-					exact
-					path="/profile/given"
-					element={
-						<PrivateRoute>
-							<GivLessonsPage />
-						</PrivateRoute>
-					}
-				/>
-				<Route
-					exact
-					path="/profile/received"
-					element={
-						<PrivateRoute>
-							<RecLessonsPage />
-						</PrivateRoute>
-					}
-				/>
+          <Route
+            exact
+            path="/profile/given"
+            element={
+              <PrivateRoute>
+                <GivLessonsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            exact
+            path="/profile/received"
+            element={
+              <PrivateRoute>
+                <RecLessonsPage />
+              </PrivateRoute>
+            }
+          /> */}
 
-
-
-
+          <Route element={<ProfilePage />}>
+            <Route path="/profile/given" element={<GivLessonsPage />} />
+            <Route path="/profile" element={<AddLesson />} />
+            <Route path="/profile/received" element={<RecLessonsPage />} />
+          </Route>
 
           <Route
             exact

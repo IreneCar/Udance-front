@@ -30,3 +30,28 @@
   margin-left: 20px;
   text-align: left;
 }
+
+/* .profile-image {
+  border-radius: 50%;
+  width: 30%;
+  height: same-as-width;
+} */
+.circular-portrait {
+  position: relative;
+  border-radius: 50%;
+  width: 35vh;
+  height: 35vh;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+.profile-side {
+  margin-right: 10%;
+}
