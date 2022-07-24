@@ -1,3 +1,4 @@
+/* --------------------- rombo images --------------------- */
 .rombo {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
@@ -6,6 +7,7 @@
   filter: drop-shadow(0px 6px 20px #aba7cc);
 }
 
+/* --------------------- home info --------------------- */
 .container-home {
   display: flex;
   flex-direction: row;
@@ -31,6 +33,7 @@
   text-align: left;
 }
 
+/* --------------------- profile image --------------------- */
 /* .profile-image {
   border-radius: 50%;
   width: 30%;
@@ -43,6 +46,7 @@
   height: 35vh;
 }
 
+/* --------------------- profile content --------------------- */
 .profile {
   display: flex;
   flex-direction: row;
@@ -54,4 +58,32 @@
 
 .profile-side {
   margin-right: 10%;
+  border-radius: 6px;
+  box-shadow: #aba7cc 0px 6px 20px 0px;
+  /* margin-bottom: 15px;
+  margin-top: 20px; */
+  padding: 15px 5px 15px 5px;
+}
+
+.profile h1 {
+  color: #3366ff;
+  margin-top: 5px;
+}
+
+.profile p {
+  color: #464555;
+  font-size: 13px;
+}
+
+/* --------------------- links profile --------------------- */
+.link {
+  color: #68f3d0;
+  text-decoration: none;
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.link:hover {
+  color: #3366ff;
+  text-decoration: none;
 }

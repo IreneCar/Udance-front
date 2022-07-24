@@ -2,11 +2,6 @@ body {
   margin: 0;
 }
 
-a {
-  list-style: none;
-  color: black;
-}
-
 button,
 select {
   padding: 5px 10px;
@@ -27,7 +22,6 @@ textarea {
   display: inline-block;
   margin: 10px;
 }
-
 
 .card {
   width: 400px;
