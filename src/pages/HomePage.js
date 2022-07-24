@@ -19,21 +19,21 @@ function HomePage() {
           />
         </div>
         <div>
-          <h3>Ofrece tus clases</h3>
+          <h3>Offer your lessons</h3>
           <p>
-            Ahora tienes un espacio para promocionar tus clases de baile. Ofrece
-            tus conocimientos a tus alumnos y consigue nuevos que están deseando
-            aprender de ti.
+            Now you have a space to promote your dance classes. Offer your
+            knowledge to your students and get new ones who are eager to learn
+            from you.
           </p>
         </div>
       </div>
 
       <div className="container-home">
         <div>
-          <h3>Aprende de otros profesores</h3>
+          <h3>Learn from other teaches</h3>
           <p>
-            Puedes aportar tu conocimiento, pero también puedes nutrirte del de
-            otros. Este es vuestro espacio.
+            You can contribute your knowledge, but you can also nourish yourself
+            from the knowledge of others. This is your space.
           </p>
         </div>
         <div className="rombo-wrap">
@@ -56,10 +56,10 @@ function HomePage() {
           />
         </div>
         <div>
-          <h3>Tu eliges las condiciones</h3>
+          <h3>You choose your own conditions</h3>
           <p>
-            La plataforma te ofrece un espacio para proponer, promocionar y
-            organizar tus clases. El lugar, la fecha, el precio... lo pones tú.
+            The platform offers you a space to propose, promote and organize
+            your classes. The place, the date, the price... you choose it.
           </p>
         </div>
       </div>

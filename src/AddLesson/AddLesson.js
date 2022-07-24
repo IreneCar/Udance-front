@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { addNewLessonService } from "../services/lesson.services.js";
-import { useContext } from "react"; 
-import { AuthContext } from "../context/auth.context"; 
+import { addNewLessonService } from "../../services/lesson.services.js";
+import { useContext } from "react"; // <== IMPORT
+import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
 
 

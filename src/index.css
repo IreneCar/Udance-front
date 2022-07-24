@@ -10,19 +10,6 @@ select {
   font-size: 18px;
 }
 
-label {
-  width: 200px;
-  display: block;
-}
-
-input,
-textarea {
-  width: 200px;
-  padding: 10px;
-  display: inline-block;
-  margin: 10px;
-}
-
 .card {
   width: 400px;
   padding: 10px;
@@ -38,38 +25,27 @@ textarea {
   margin-left: 5px;
 }
 
-.EditProjectPage,
-.AddProject,
+.EditLessonPage,
+.AddLesson,
 .AddTask,
 .SignupPage,
 .LoginPage {
-  background: #f9eec3;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 3px grey;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
+  background: white;
+  box-shadow: #aba7cc 0px 6px 20px 0px;
+  width: 50%;
+  margin-top: 20px;
+  padding: 15px 5px;
+  border-radius: 6px;
+  margin: auto;
 }
 
-.EditProjectPage {
+.EditLessonPage {
   background-color: rgb(239, 196, 88);
 }
 
-.SignupPage,
-.LoginPage {
-  background-color: #608dd5;
-}
-
-.LoginPage {
-  background-color: #94a7c8;
-}
-
-.EditProjectPage form,
+.EditLessonPage form,
 .AddTask form,
-.AddProject form,
+.AddLesson form,
 .SignupPage form,
 .LoginPage form {
   display: flex;
@@ -78,8 +54,66 @@ textarea {
 }
 
 .AddTask button,
-.AddProject button {
+.EditLessonPage button,
+.SignupPage button,
+.LoginPage button,
+.AddLesson button {
   display: block;
+  background: #3366ff;
+  border-radius: 999px;
+  box-shadow: #aba7cc 0 10px 20px -2px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 18px;
+  user-select: none;
+  border: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.EditLessonPage label,
+.AddTask label,
+.AddLesson label,
+.SignupPage label,
+.LoginPage label {
+  color: #3366ff;
+  font-size: 15px;
+  padding: 15px 15px 5px 15px;
+}
+
+.EditLessonPage input,
+.AddTask input,
+.AddLesson input,
+.SignupPage input,
+.LoginPage input {
+  border: 1px solid #3366ff;
+  /* background-color: white; */
+  /* font-size: 15px; */
+  width: 90%;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  border-radius: 60px;
+  /* color: #3366ff; */
+  /* font-weight: 100; */
+}
+
+.EditLessonPage input,
+.AddTask input,
+.AddLesson input,
+.SignupPage input,
+.LoginPage input {
+  border: 1px solid #3366ff;
+  background-color: white;
+  /* font-size: 15px; */
+  width: 90%;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  border-radius: 60px;
+  /* color: #3366ff; */
+  /* font-weight: 100; */
 }
 
 .TaskCard {
