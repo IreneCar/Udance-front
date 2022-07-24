@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LessonCard from './../components/LessonCard';
+import LessonCard from '../components/LessonCard/LessonCard';
 import { getGivedLessonsService } from '../services/profile.services';
 
 function GivLessonPage() {
