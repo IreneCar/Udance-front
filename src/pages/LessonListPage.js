@@ -25,9 +25,7 @@ function LessonListPage() {
   }, []);
 
   return (
-    <div className="ProjectListPage">
-      <AddLesson refreshProjects={getAllLessons} />
-
+    <div className="LessonListPage">
       {loading && <div>Loading...</div>}
       {!loading &&
         lessons?.map((lesson) => <LessonCard key={lesson._id} {...lesson} />)}

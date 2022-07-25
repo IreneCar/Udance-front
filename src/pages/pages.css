@@ -34,16 +34,20 @@
 }
 
 /* --------------------- profile image --------------------- */
-/* .profile-image {
-  border-radius: 50%;
-  width: 30%;
-  height: same-as-width;
-} */
+
 .circular-portrait {
   position: relative;
   border-radius: 50%;
-  width: 35vh;
-  height: 35vh;
+  overflow: hidden;
+  width: 15vw;
+  height: 15vw;
+  margin: auto;
+}
+
+.circular-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* --------------------- profile content --------------------- */
@@ -80,7 +84,6 @@
   color: #68f3d0;
   text-decoration: none;
   font-size: 13px;
-  margin-right: 8px;
 }
 
 .link:hover {
@@ -88,8 +91,49 @@
   text-decoration: none;
 }
 
+.tiny {
+  font-size: 10px;
+}
+
+.separator {
+  color: #68f3d0;
+  padding: 0px 5px;
+  font-weight: 100;
+}
+
+/* --------------------- img and text icon --------------------- */
+.icon {
+  width: 10%;
+}
+
+.addNewLesson {
+  color: #3366ff !important;
+  font-size: 10px !important;
+}
+
+.newLessonContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  padding-top: 20px;
+}
+
+/* --------------------- profile outlet --------------------- */
 .profileOutlet {
   width: 65%;
   margin-left: 20px;
   /* padding-top: 15px; */
+}
+
+/* --------------------- Lesson List profile --------------------- */
+.LessonListPage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: stretch;
 }

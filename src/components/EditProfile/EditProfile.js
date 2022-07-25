@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { updateProfileService } from "../../services/profile.services";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
+import { useNavigate } from "react-router-dom";
+import { getProfileService } from "../../services/profile.services";
 
 function EditProfile(props) {
+  console.log(props);
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [danceStyles, setDanceStyles] = useState("");
+
+  const [profile, setProfile] = useState("profile");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,16 +27,33 @@ function EditProfile(props) {
       danceStyles,
     };
 
+    // const getProfile = async () => {
+    //   try {
+    //     const response = await getProfileService();
+    //     setProfile(response.data);
+    //   } catch (err) {
+    //     console.log(err);
+    //   };
+    // }
+
+    // useEffect(() => {
+    //   getProfile();
+    //   // eslint-disable-next-line
+    // }, []);
+
     // Send the token through the request "Authorization" Headers
     try {
       await updateProfileService(newProfile);
-
-      name("");
-      image("");
-      description("");
-      danceStyles("");
-      props.refreshProjects();
-      update
+      console.log("updated");
+      setName("");
+      setImage("");
+      setDescription("");
+      setDanceStyles("");
+      console.log("refresh");
+      window.location.reload(false);
+      console.log("antes navigate");
+      navigate("/profile");
+      console.log("despues navigate");
     } catch (err) {
       console.log(err);
     }

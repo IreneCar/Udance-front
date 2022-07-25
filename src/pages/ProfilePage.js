@@ -26,34 +26,36 @@ function ProfilePage(props) {
   return (
     <div className="profile">
       <div className="profile-side">
-        <img src={profileImg} alt="my-profile" className="circular-portrait" />
+        <div className="circular-portrait">
+          <img src={profileImg} alt="my-profile" />
+        </div>
 
         <h1>{profile.name}</h1>
-        <p>This is the profile description</p>
-        <p>Styles I dance</p>
+        <p>{profile.description}</p>
+        <p>{profile.danceStyles}</p>
 
         <Link className="link" to="/profile/given">
           Gived Lessons
         </Link>
-
+        <span className="separator">|</span>
         <Link className="link" to="/profile/received">
           Received Lessons
         </Link>
         <br />
-        <Link to="/profile/newLesson">
-          <img
-            src={addIcon}
-            alt="icon to add clases"
-            width={"10%"}
-            style={{ marginTop: "10px" }}
-          />
+        <div className="newLessonContainer">
+          <Link to="/profile/newLesson">
+            <img src={addIcon} alt="icon to add clases" className="icon" />
+          </Link>
+          <p className="addNewLesson">Add lesson</p>
+        </div>
+
+        <Link to="/profile/edit" className="link tiny">
+          Edit Profile
         </Link>
-        <br />
-        <Link to="/profile/edit">Edit Profile</Link>
       </div>
 
       <div className="profileOutlet">
-        <Outlet />
+        <Outlet getProfile={getProfile} />
       </div>
     </div>
   );

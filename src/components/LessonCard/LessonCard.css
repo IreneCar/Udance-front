@@ -1,13 +1,41 @@
 .LessonCard {
-    background: white;
-    color: rgb(188, 22, 22);
-    padding: 0px 20px;
-    box-shadow: #aba7cc 0px 6px 20px 0px;
-    width: 100%;
-    margin-bottom: 15px;
-    margin-top: 20px;
-    padding: 5px;
-    border-radius: 6px;
-  }
+  background: white;
+  color: #36f;
+  padding: 0px 20px;
+  box-shadow: #aba7cc 0px 6px 20px 0px;
+  width: 45%;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 6px;
 
-  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+.LessonCard-date {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+.LessonCard img {
+  position: relative;
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+}
+
+.LessonCard img {
+  position: relative;
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+}
