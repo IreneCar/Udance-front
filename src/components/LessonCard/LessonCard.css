@@ -26,16 +26,8 @@
   align-content: stretch;
 }
 
-.LessonCard img {
-  position: relative;
-  border-radius: 50%;
-  width: 20%;
-  height: 20%;
-}
-
-.LessonCard img {
-  position: relative;
-  border-radius: 50%;
-  width: 20%;
-  height: 20%;
+.LessonCard p {
+  color: #464555;
+  padding: 5px 0px;
+  font-size: 13px;
 }

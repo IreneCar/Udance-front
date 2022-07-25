@@ -5,11 +5,10 @@ import "./LessonCard.css";
 function ProjectCard({ title, lastDay, firstDay, _id, teacher }) {
   return (
     <div className="LessonCard">
-      <div>
+      <div className="circular-portrait ">
         <img
           src="https://www.kindpng.com/picc/m/353-3534825_cool-profile-avatar-picture-cool-profile-hd-png.png"
           alt="teacher"
-          className="circular-portrait"
         />
       </div>
       <div>
