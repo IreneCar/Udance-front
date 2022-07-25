@@ -57,12 +57,12 @@
 }
 
 .profile-side {
-  margin-right: 10%;
   border-radius: 6px;
   box-shadow: #aba7cc 0px 6px 20px 0px;
   /* margin-bottom: 15px;
   margin-top: 20px; */
   padding: 15px 5px 15px 5px;
+  width: 35%;
 }
 
 .profile h1 {
@@ -86,4 +86,10 @@
 .link:hover {
   color: #3366ff;
   text-decoration: none;
+}
+
+.profileOutlet {
+  width: 65%;
+  margin-left: 20px;
+  /* padding-top: 15px; */
 }

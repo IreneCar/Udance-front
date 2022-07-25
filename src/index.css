@@ -25,9 +25,6 @@ select {
   margin-left: 5px;
 }
 
-.EditLessonPage,
-.AddLesson,
-.AddTask,
 .SignupPage,
 .LoginPage {
   background: white;
@@ -37,6 +34,15 @@ select {
   padding: 15px 5px;
   border-radius: 6px;
   margin: auto;
+}
+
+.EditLessonPage,
+.AddLesson,
+.AddTask {
+  background: white;
+  box-shadow: #aba7cc 0px 6px 20px 0px;
+  width: 100%;
+  border-radius: 6px;
 }
 
 .EditLessonPage {
@@ -90,7 +96,7 @@ select {
 .SignupPage input,
 .LoginPage input {
   border: 1px solid #3366ff;
-  /* background-color: white; */
+  background-color: white;
   /* font-size: 15px; */
   width: 90%;
   box-sizing: border-box;
@@ -100,20 +106,28 @@ select {
   /* font-weight: 100; */
 }
 
-.EditLessonPage input,
-.AddTask input,
-.AddLesson input,
-.SignupPage input,
-.LoginPage input {
-  border: 1px solid #3366ff;
-  background-color: white;
-  /* font-size: 15px; */
-  width: 90%;
-  box-sizing: border-box;
-  padding: 5px 15px;
-  border-radius: 60px;
-  /* color: #3366ff; */
-  /* font-weight: 100; */
+.LoginPage p,
+.SignupPage p {
+  color: #464555;
+  font-size: 13px;
+  margin-bottom: 0px !important;
+}
+
+.linkLogin {
+  color: #68fbd0;
+  font-size: 13px;
+  text-decoration: none;
+  margin-top: -5px;
+}
+
+.linkLogin:hover {
+  color: #3366ff;
+}
+
+.LoginPage h1,
+.SignupPage h1 {
+  color: #464555;
+  font-size: 40px;
 }
 
 .TaskCard {

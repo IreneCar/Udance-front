@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { addNewLessonService } from "../services/lesson.services.js";
-import { useContext } from "react"; 
-import { AuthContext } from "../context/auth.context"; 
-
-
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 function AddLesson(props) {
   const { user } = useContext(AuthContext);
@@ -42,7 +40,7 @@ function AddLesson(props) {
     // Send the token through the request "Authorization" Headers
     try {
       await addNewLessonService(newLesson);
-    
+
       setTitle("");
       setStyles("");
       setLocation("");
@@ -61,7 +59,7 @@ function AddLesson(props) {
   };
 
   return (
-    <div className="AddProject">
+    <div className="AddLesson">
       <h3>Add Lesson</h3>
 
       <form onSubmit={handleSubmit}>
@@ -72,7 +70,6 @@ function AddLesson(props) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-
 
         <label>Styles:</label>
         <input

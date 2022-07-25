@@ -47,7 +47,7 @@ function ProfilePage(props) {
         />
       </div>
 
-      <div>
+      <div className="profileOutlet">
         <Outlet />
       </div>
     </div>
