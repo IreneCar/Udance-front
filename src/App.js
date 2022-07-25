@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AddLesson from "./components/AddLesson";
+import EditProfile from "./components/EditProfile/EditProfile";
 
 function App() {
   return (
@@ -64,8 +65,10 @@ function App() {
 
           <Route element={<ProfilePage />}>
             <Route path="/profile/given" element={<GivLessonsPage />} />
-            <Route path="/profile" element={<AddLesson />} />
+            <Route path="/profile" />
             <Route path="/profile/received" element={<RecLessonsPage />} />
+            <Route path="/profile/newLesson" element={<AddLesson />} />
+            <Route path="/profile/edit" element={<EditProfile />} />
           </Route>
 
           <Route

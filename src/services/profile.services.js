@@ -1,29 +1,40 @@
-import service from './service';
+import service from "./service";
 
-const URL = '/profile';
+const URL = "/profile";
 
 //add new task
 const getProfileService = () => {
-	return service.get(`${URL}`);
+  return service.get(`${URL}`);
+};
+
+//update profile
+const updateProfileService = (updatedProfile) => {
+  return service.put(`${URL}/edit`, updatedProfile);
 };
 
 const getGivedLessonsService = () => {
-	return service.get(`${URL}/gived`);
+  return service.get(`${URL}/gived`);
 };
 
 const getReceivedLessonsService = () => {
-	return service.get(`${URL}/received`);
+  return service.get(`${URL}/received`);
 };
 
 //delete task
 const deleteTaskService = (id) => {
-	return service.delete(`${URL}/${id}`);
+  return service.delete(`${URL}/${id}`);
 };
 
 //update task
 const updateTaskService = (id, updatedTask) => {
-	return service.put(`${URL}/${id}`, updatedTask);
+  return service.put(`${URL}/${id}`, updatedTask);
 };
 
-export { getProfileService, deleteTaskService, updateTaskService,
-	getGivedLessonsService,getReceivedLessonsService };
+export {
+  getProfileService,
+  updateProfileService,
+  deleteTaskService,
+  updateTaskService,
+  getGivedLessonsService,
+  getReceivedLessonsService,
+};

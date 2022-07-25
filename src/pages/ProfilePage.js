@@ -4,6 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import profileImg from "../images/profile.jpg";
 import React from "react";
 import addIcon from "../images/addIcon-01.png";
+import updateProfileService from "../services/profile.services";
 
 function ProfilePage(props) {
   const [profile, setProfile] = useState("profile");
@@ -38,13 +39,17 @@ function ProfilePage(props) {
         <Link className="link" to="/profile/received">
           Received Lessons
         </Link>
-
-        <img
-          src={addIcon}
-          alt="icon to add clases"
-          width={"10%"}
-          style={{ marginTop: "10px" }}
-        />
+        <br />
+        <Link to="/profile/newLesson">
+          <img
+            src={addIcon}
+            alt="icon to add clases"
+            width={"10%"}
+            style={{ marginTop: "10px" }}
+          />
+        </Link>
+        <br />
+        <Link to="/profile/edit">Edit Profile</Link>
       </div>
 
       <div className="profileOutlet">

@@ -52,7 +52,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  align-items: baseline;
+  align-items: flex-start;
   align-content: flex-start;
 }
 
