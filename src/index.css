@@ -80,6 +80,26 @@ select {
   margin-bottom: 30px;
 }
 
+.AddTask button:hover,
+.EditLessonPage button:hover,
+.SignupPage button:hover,
+.LoginPage button:hover,
+.AddLesson button:hover {
+  display: block;
+  background: white;
+  border-radius: 999px;
+  box-shadow: #aba7cc 0 10px 20px -2px;
+  color: #3366ff;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 1;
+  padding: 5px 18px;
+  user-select: none;
+  border: 2 solid #3366ff;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .EditLessonPage label,
 .AddTask label,
 .AddLesson label,
