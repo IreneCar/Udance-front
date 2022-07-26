@@ -1,21 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { updateProfileService } from "../../services/profile.services";
-import { useContext } from "react";
-import { AuthContext } from "../../context/auth.context";
 import { useNavigate } from "react-router-dom";
-import { getProfileService } from "../../services/profile.services";
+import { useOutletContext } from "react-router-dom";
+import { useContext } from "react"; // <== IMPORT
+import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
-function EditProfile(props) {
-  console.log(props);
-  const { user } = useContext(AuthContext);
+
+
+function EditProfile() {
+  const {setUser} = useContext(AuthContext);
+  const [getProfile,profile] = useOutletContext();
+ 
+
   const navigate = useNavigate();
 
-  const [name, setName] = useState("");
-  const [image, setImage] = useState("");
-  const [description, setDescription] = useState("");
-  const [danceStyles, setDanceStyles] = useState("");
+  const [name, setName] = useState(profile.name);
+  const [image, setImage] = useState(profile.image);
+  const [description, setDescription] = useState(profile.description);
+  const [danceStyles, setDanceStyles] = useState(profile.danceStyles);
 
-  const [profile, setProfile] = useState("profile");
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,33 +31,22 @@ function EditProfile(props) {
       danceStyles,
     };
 
-    // const getProfile = async () => {
-    //   try {
-    //     const response = await getProfileService();
-    //     setProfile(response.data);
-    //   } catch (err) {
-    //     console.log(err);
-    //   };
-    // }
 
-    // useEffect(() => {
-    //   getProfile();
-    //   // eslint-disable-next-line
-    // }, []);
 
     // Send the token through the request "Authorization" Headers
     try {
       await updateProfileService(newProfile);
-      console.log("updated");
+      
       setName("");
       setImage("");
       setDescription("");
       setDanceStyles("");
-      console.log("refresh");
-      window.location.reload(false);
-      console.log("antes navigate");
+     getProfile();
+     setUser(newProfile)
+      
+     
       navigate("/profile");
-      console.log("despues navigate");
+     
     } catch (err) {
       console.log(err);
     }
