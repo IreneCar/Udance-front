@@ -10,42 +10,56 @@ import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 function EditProfile() {
   const {setUser} = useContext(AuthContext);
   const [getProfile,profile] = useOutletContext();
+  const [data,setData]=useState(profile)
+  
+  
+  
  
 
   const navigate = useNavigate();
 
-  const [name, setName] = useState(profile.name);
-  const [image, setImage] = useState(profile.image);
-  const [description, setDescription] = useState(profile.description);
-  const [danceStyles, setDanceStyles] = useState(profile.danceStyles);
-
+ const handleChange = (name) =>(e)=>{
+   const value = name==="image" ? e.target.files[0]:e.target.value
+   setData({...data,[name]:value})
+ }
  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newProfile = {
-      name,
-      image,
-      description,
-      danceStyles,
-    };
+   try {
+     let formData = new FormData();
+     formData.append("name",data.name);
+     formData.append("image",data.image);
+     formData.append("imageId",data.imageId);
+     formData.append("description",data.description);
+     formData.append("danceStyles",data.danceStyles);
+     formData.append("existingId",data.existingId);
+     const res =await updateProfileService(formData);
+     
+     if(res.ok){
+       getProfile()
+       navigate("/profile");
+     }
+
+
+
+   } catch (error) {
+     console.log(error)
+   }
 
 
 
     // Send the token through the request "Authorization" Headers
     try {
-      await updateProfileService(newProfile);
+     
       
-      setName("");
-      setImage("");
-      setDescription("");
-      setDanceStyles("");
-     getProfile();
-     setUser(newProfile)
+    
+   
+     setUser()
       
      
-      navigate("/profile");
+     
      
     } catch (err) {
       console.log(err);
@@ -61,34 +75,35 @@ function EditProfile() {
         <input
           type="text"
           name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={data.name}
+          onChange={handleChange("name")}
         />
 
         <label>Image:</label>
         <input
-          type="text"
+          type="file"
           name="image"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
+         
+          onChange={handleChange("image")}
         />
+        
 
         <label>Description:</label>
         <input
           type="text"
           name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={data.description}
+          onChange={handleChange("description")}
         />
 
         <label>Dance Styles:</label>
         <input
           type="text"
           name="danceStyles"
-          value={danceStyles}
-          onChange={(e) => setDanceStyles(e.target.value)}
+          value={data.danceStyles}
+          onChange={handleChange("danceStyles")}
         />
-
+     
         <button type="submit">Submit</button>
       </form>
     </div>
