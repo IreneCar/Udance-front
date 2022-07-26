@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import profileImg from "../images/profile.jpg";
 import React from "react";
 import addIcon from "../images/addIcon-01.png";
-import updateProfileService from "../services/profile.services";
+
 
 function ProfilePage(props) {
   const [profile, setProfile] = useState("profile");
@@ -55,7 +55,7 @@ function ProfilePage(props) {
       </div>
 
       <div className="profileOutlet">
-        <Outlet getProfile={getProfile} />
+        <Outlet context={[getProfile,profile]} />
       </div>
     </div>
   );

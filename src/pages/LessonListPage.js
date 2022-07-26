@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import AddLesson from "../components/AddLesson";
 import LessonCard from "../components/LessonCard/LessonCard";
 import { getAllLessonsService } from "../services/lesson.services";
 
