@@ -2,14 +2,6 @@ body {
   margin: 0;
 }
 
-button,
-select {
-  padding: 5px 10px;
-  min-width: 50px;
-  margin: 5px;
-  font-size: 18px;
-}
-
 .card {
   width: 400px;
   padding: 10px;
@@ -37,12 +29,14 @@ select {
 }
 
 .EditLessonPage,
+.EditProfile,
 .AddLesson,
 .AddTask {
   background: white;
   box-shadow: #aba7cc 0px 6px 20px 0px;
   width: 100%;
   border-radius: 6px;
+  padding: 20px 10px;
 }
 
 .EditLessonPage {
@@ -50,6 +44,7 @@ select {
 }
 
 .EditLessonPage form,
+.EditProfile form,
 .AddTask form,
 .AddLesson form,
 .SignupPage form,
@@ -61,11 +56,12 @@ select {
 
 .AddTask button,
 .EditLessonPage button,
+.EditProfile button,
 .SignupPage button,
 .LoginPage button,
 .AddLesson button {
   display: block;
-  background: #3366ff;
+  background-color: #3366ff;
   border-radius: 999px;
   box-shadow: #aba7cc 0 10px 20px -2px;
   color: #ffffff;
@@ -77,16 +73,18 @@ select {
   user-select: none;
   border: 0;
   margin-top: 20px;
-  margin-bottom: 30px;
+  text-decoration: none !important;
+  transition: all 0.2s;
 }
 
 .AddTask button:hover,
 .EditLessonPage button:hover,
+.EditProfile button:hover,
 .SignupPage button:hover,
 .LoginPage button:hover,
 .AddLesson button:hover {
   display: block;
-  background: white;
+  background-color: white;
   border-radius: 999px;
   box-shadow: #aba7cc 0 10px 20px -2px;
   color: #3366ff;
@@ -95,12 +93,12 @@ select {
   opacity: 1;
   padding: 5px 18px;
   user-select: none;
-  border: 2 solid #3366ff;
   margin-top: 20px;
-  margin-bottom: 30px;
+  text-decoration: none !important;
 }
 
 .EditLessonPage label,
+.EditProfile label,
 .AddTask label,
 .AddLesson label,
 .SignupPage label,
@@ -111,6 +109,7 @@ select {
 }
 
 .EditLessonPage input,
+.EditProfile input,
 .AddTask input,
 .AddLesson input,
 .SignupPage input,
@@ -142,6 +141,7 @@ select {
 
 .linkLogin:hover {
   color: #3366ff;
+  text-decoration: none;
 }
 
 .LoginPage h1,
