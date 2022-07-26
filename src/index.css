@@ -57,8 +57,6 @@ body {
 .AddTask button,
 .EditLessonPage button,
 .EditProfile button,
-.SignupPage button,
-.LoginPage button,
 .AddLesson button {
   display: block;
   background-color: #3366ff;
@@ -73,6 +71,26 @@ body {
   user-select: none;
   border: 0;
   margin-top: 20px;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.SignupPage button,
+.LoginPage button {
+  display: block;
+  background-color: #3366ff;
+  border-radius: 999px;
+  box-shadow: #aba7cc 0 10px 20px -2px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 18px;
+  user-select: none;
+  border: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-decoration: none !important;
   transition: all 0.2s;
 }
