@@ -34,11 +34,11 @@ function EditProfile() {
      formData.append("imageId",data.imageId);
      formData.append("description",data.description);
      formData.append("danceStyles",data.danceStyles);
-     formData.append("existingId",data.existingId);
+     formData.append("existingId",data.imageId);
+     formData.append("existingUrl",data.imageUrl);
      const res =await updateProfileService(formData);
-     
-     if(res.ok){
-       getProfile()
+   
+     if(res.status===200){console.log("yes")
        navigate("/profile");
      }
 

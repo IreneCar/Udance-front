@@ -11,11 +11,15 @@ function ProfilePage(props) {
 
   const getProfile = async () => {
     try {
+     
       const response = await getProfileService();
       setProfile(response.data);
+     
     } catch (err) {
       console.log(err);
     }
+
+
   };
 
   useEffect(() => {
@@ -27,7 +31,8 @@ function ProfilePage(props) {
     <div className="profile">
       <div className="profile-side">
         <div className="circular-portrait">
-          <img src={profileImg} alt="my-profile" />
+          <img src={profile.imageUrl} alt="my-profile" />
+       
         </div>
 
         <h1>{profile.name}</h1>
