@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 import { getProfileService } from "../services/profile.services.js";
 import { Link, Outlet } from "react-router-dom";
-import profileImg from "../images/profile.jpg";
+
 import React from "react";
 import addIcon from "../images/addIcon-01.png";
 
 
 function ProfilePage(props) {
   const [profile, setProfile] = useState("profile");
+  const [edited, setEdited] = useState(false);
 
   const getProfile = async () => {
     try {
+     
       const response = await getProfileService();
       setProfile(response.data);
+     
     } catch (err) {
       console.log(err);
     }
+
+
   };
 
   useEffect(() => {
+    console.log("use efect profile")
     getProfile();
     // eslint-disable-next-line
   }, []);
@@ -27,7 +33,8 @@ function ProfilePage(props) {
     <div className="profile">
       <div className="profile-side">
         <div className="circular-portrait">
-          <img src={profileImg} alt="my-profile" />
+          <img src={profile.imageUrl} alt="my-profile" />
+       
         </div>
 
         <h1>{profile.name}</h1>
@@ -55,7 +62,7 @@ function ProfilePage(props) {
       </div>
 
       <div className="profileOutlet">
-        <Outlet context={[getProfile,profile]} />
+        <Outlet context={[getProfile,profile,setProfile]} />
       </div>
     </div>
   );

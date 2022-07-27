@@ -9,7 +9,7 @@ import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
 function EditProfile() {
   const {setUser} = useContext(AuthContext);
-  const [getProfile,profile] = useOutletContext();
+  const [getProfile,profile,setProfile] = useOutletContext();
   const [data,setData]=useState(profile)
   
   
@@ -34,12 +34,15 @@ function EditProfile() {
      formData.append("imageId",data.imageId);
      formData.append("description",data.description);
      formData.append("danceStyles",data.danceStyles);
-     formData.append("existingId",data.existingId);
+     formData.append("existingId",data.imageId);
+     formData.append("existingUrl",data.imageUrl);
      const res =await updateProfileService(formData);
-     
-     if(res.ok){
-       getProfile()
+   
+     if(res.status===200){console.log("yes")
+     getProfile()
        navigate("/profile");
+       window.location.reload()
+       
      }
 
 
