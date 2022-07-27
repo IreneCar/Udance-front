@@ -4,8 +4,12 @@ import { joinLessonService } from "../services/lesson.services.js";
 import { dropOffLessonService } from "../services/lesson.services.js";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import img14 from "../images/img14.jpg";
+import { useContext } from "react"; // <== IMPORT
+import { AuthContext } from "../context/auth.context"; // <== IMPORT
+
 
 function LessonDetailsPage(props) {
+  const { isLoggedIn} = useContext(AuthContext);
   const navigate = useNavigate();
   const [lesson, setLesson] = useState(null);
   const { id } = useParams();
@@ -28,9 +32,13 @@ function LessonDetailsPage(props) {
 
   const joinLesson = async () => {
     try {
-      await joinLessonService(projectId);
-      navigate("/profile");
-    } catch (err) {
+      if(isLoggedIn){
+        await joinLessonService(projectId);
+      navigate("/profile");}
+      else{navigate("/signup")}
+      }
+      
+     catch (err) {
       console.log(err);
     }
   };
