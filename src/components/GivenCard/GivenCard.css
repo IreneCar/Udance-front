@@ -3,9 +3,7 @@
   color: #36f;
   padding: 0px 20px;
   box-shadow: #aba7cc 0px 6px 20px 0px;
-  width: 45%;
   margin-bottom: 15px;
-  margin-top: 20px;
   padding: 20px 5px;
   border-radius: 6px;
 
@@ -15,6 +13,17 @@
   justify-content: space-around;
   align-items: center;
   align-content: stretch;
+}
+
+@media (max-width: 500px) {
+  .GivenCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
 }
 
 .GivenCard-info {

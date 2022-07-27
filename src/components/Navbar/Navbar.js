@@ -37,7 +37,6 @@ function Navbar() {
             </Button>
             <span className="navBarLink" style={{ fontWeight: "bold" }}>
               {user.name}
-              
             </span>
           </div>
         ) : (
