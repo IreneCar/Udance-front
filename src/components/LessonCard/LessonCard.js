@@ -15,11 +15,11 @@ function ProjectCard({ title, lastDay, firstDay, _id, teacher }) {
         <h3>{title}</h3>
 
         <div className="LessonCard-info">
-          <span>{teacher}</span>
+          <h6>{teacher}</h6>
 
           <div className="LessonCard-date">
             <p>{firstDay}</p>
-            <p>-</p>
+            <p>/</p>
             <p>{lastDay}</p>
           </div>
         </div>

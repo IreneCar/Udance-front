@@ -3,13 +3,12 @@ import { getLessonDetailsService } from "../services/lesson.services";
 import { joinLessonService } from "../services/lesson.services.js";
 import { dropOffLessonService } from "../services/lesson.services.js";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import img14 from "../images/img14.jpg";
+import img12 from "../images/img12.jpg";
 import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "../context/auth.context"; // <== IMPORT
 
-
 function LessonDetailsPage(props) {
-  const { isLoggedIn} = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [lesson, setLesson] = useState(null);
   const { id } = useParams();
@@ -32,13 +31,13 @@ function LessonDetailsPage(props) {
 
   const joinLesson = async () => {
     try {
-      if(isLoggedIn){
+      if (isLoggedIn) {
         await joinLessonService(projectId);
-      navigate("/profile");}
-      else{navigate("/signup")}
+        navigate("/profile");
+      } else {
+        navigate("/signup");
       }
-      
-     catch (err) {
+    } catch (err) {
       console.log(err);
     }
   };
@@ -57,7 +56,7 @@ function LessonDetailsPage(props) {
       {!lesson && <h3>Lesson not found!</h3>}
       {lesson && (
         <div>
-          <img src={img14} alt="dancing-lesson" />
+          <img src={img12} alt="dancing-lesson" />
           {/* <p>Image: {lesson.image}</p> */}
           <h1>{lesson.title}</h1>
           <div className="LessonDetails-wrap-row2">

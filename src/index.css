@@ -139,6 +139,7 @@ body {
   box-sizing: border-box;
   padding: 5px 15px;
   border-radius: 60px;
+  border-color: #68fbd0;
   /* color: #3366ff; */
   /* font-weight: 100; */
 }

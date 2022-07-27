@@ -33,7 +33,7 @@
   justify-content: space-between;
   align-items: baseline;
   align-content: stretch;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 
 .LessonCard-wrapInfo {
@@ -47,8 +47,14 @@
 
 .LessonCard p {
   color: #464555;
+  padding: 1px 1px;
+  font-size: 11px;
+}
+
+.LessonCard h6 {
+  color: #3366ff;
   padding: 5px 5px;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .LessonCard button {
