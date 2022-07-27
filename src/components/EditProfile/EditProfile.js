@@ -9,7 +9,7 @@ import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
 function EditProfile() {
   const {setUser} = useContext(AuthContext);
-  const [getProfile,profile] = useOutletContext();
+  const [getProfile,profile,setProfile] = useOutletContext();
   const [data,setData]=useState(profile)
   
   
@@ -39,7 +39,10 @@ function EditProfile() {
      const res =await updateProfileService(formData);
    
      if(res.status===200){console.log("yes")
+     getProfile()
        navigate("/profile");
+       window.location.reload()
+       
      }
 
 
