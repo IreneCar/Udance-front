@@ -69,6 +69,7 @@ function App() {
             <Route path="/profile/received" element={<RecLessonsPage />} />
             <Route path="/profile/newLesson" element={<AddLesson />} />
             <Route path="/profile/edit" element={<EditProfile />} />
+            {/* <Route path="/profile/mail" element={<MailForm />} /> */}
           </Route>
 
           <Route
