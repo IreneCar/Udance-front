@@ -29,9 +29,9 @@ function App() {
             exact
             path="/lessons/:id"
             element={
-              <PrivateRoute>
+             
                 <LessonDetailsPage />
-              </PrivateRoute>
+          
             }
           />
           {/* <Route
@@ -63,7 +63,7 @@ function App() {
             }
           /> */}
 
-          <Route element={<ProfilePage />}>
+          <Route element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
             <Route path="/profile/given" element={<GivLessonsPage />} />
             <Route path="/profile" />
             <Route path="/profile/received" element={<RecLessonsPage />} />
