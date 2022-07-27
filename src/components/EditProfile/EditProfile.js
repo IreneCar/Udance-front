@@ -9,7 +9,7 @@ import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
 function EditProfile() {
   const {setUser} = useContext(AuthContext);
-  const [getProfile,profile,setProfile] = useOutletContext();
+  const [getProfile,profile] = useOutletContext();
   const [data,setData]=useState(profile)
   
   
@@ -37,11 +37,13 @@ function EditProfile() {
      formData.append("existingId",data.imageId);
      formData.append("existingUrl",data.imageUrl);
      const res =await updateProfileService(formData);
-   
-     if(res.status===200){console.log("yes")
-     getProfile()
+     
+     if(res.status===200){
+      const newUser = { name:data.name};
+    
+      getProfile()
+      setUser(newUser)
        navigate("/profile");
-       window.location.reload()
        
      }
 
@@ -54,19 +56,17 @@ function EditProfile() {
 
 
     // Send the token through the request "Authorization" Headers
-    try {
+   
      
       
     
    
-     setUser()
+   
       
      
      
      
-    } catch (err) {
-      console.log(err);
-    }
+   
   };
 
   return (
