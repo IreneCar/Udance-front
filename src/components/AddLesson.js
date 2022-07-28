@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { addNewLessonService } from "../services/lesson.services.js";
+import MultiSelect from "react-multiple-select-dropdown-lite";
+import "react-multiple-select-dropdown-lite/dist/index.css";
 
 function AddLesson(props) {
-
-
-
   const [title, setTitle] = useState("");
   const [styles, setStyles] = useState("");
   const [location, setLocation] = useState("");
@@ -61,6 +60,48 @@ function AddLesson(props) {
     }
   };
 
+  //Multi-select
+  const [value, setvalue] = useState("");
+
+  const handleOnchange = (val) => {
+    setStyles(val);
+  };
+
+  const options = [
+    { label: "Hip-Hop", value: " Hip-Hop" },
+    { label: "Popping", value: " Popping" },
+    { label: "Locking", value: " Locking" },
+    { label: "Breaking", value: " Breaking" },
+    { label: "House", value: " House" },
+    { label: "Dancehall", value: " Dancehall" },
+    { label: "Waacking", value: " Waacking" },
+    { label: "Voguing", value: " Voguing" },
+    { label: "Contemporary", value: " Contemporary" },
+    { label: "Jazz", value: " Jazz" },
+    { label: "Ballet", value: " Ballet" },
+    { label: "Salsa", value: " Salsa" },
+    { label: "Bachata", value: " Bachata" },
+    { label: "Flamenco", value: " Flamenco" },
+    { label: "Tap Dance", value: " Tap Dance" },
+    { label: "Swing Dance", value: " Swing Dance" },
+    { label: "Freestyle", value: " Freestyle" },
+    { label: "Choreo", value: " Choreo" },
+    { label: "AfroBeat", value: " AfroBeat" },
+    { label: "Bollywood", value: " Bollywood" },
+    { label: "Belly Dance", value: " Belly Dance" },
+  ];
+
+  let multiple = {
+    border: "1px solid #3366ff",
+    backgroundColor: "white",
+    fontSize: "11px",
+    width: "90%",
+    boxSizing: "border-box",
+    padding: "5px 15px",
+    borderRadius: "60px",
+    color: "#464555",
+  };
+
   return (
     <div className="AddLesson">
       <h3>Add Lesson</h3>
@@ -75,11 +116,10 @@ function AddLesson(props) {
         />
 
         <label>Styles:</label>
-        <input
-          type="text"
-          name="style"
-          value={styles}
-          onChange={(e) => setStyles(e.target.value)}
+        <MultiSelect
+          onChange={handleOnchange}
+          options={options}
+          style={multiple}
         />
 
         <label>Location:</label>
