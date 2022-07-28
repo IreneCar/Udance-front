@@ -60,8 +60,6 @@ function AddLesson(props) {
     }
   };
 
-  //Multi-select
-  const [value, setvalue] = useState("");
 
   const handleOnchange = (val) => {
     setStyles(val);
