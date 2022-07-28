@@ -52,7 +52,6 @@ function AddLesson(props) {
       setPrice("");
       setDetails("");
       setCohost("");
-
       props.refreshProjects();
     } catch (err) {
       console.log(err);
