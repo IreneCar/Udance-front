@@ -75,7 +75,7 @@
   text-decoration: none;
 }
 
-.GivenCard button {
+.GivenCard-button {
   display: block;
   background-color: #3366ff;
   border-radius: 999px;
@@ -93,7 +93,7 @@
   transition: all 0.2s;
 }
 
-.GivenCard button:hover {
+.GivenCard-button:hover {
   display: block;
   background-color: white;
   border-radius: 999px;
@@ -109,4 +109,14 @@
 
 .students {
   margin: 0 !important;
+}
+
+.delete {
+  color: #ff536a;
+  padding: 5px 5px;
+  font-size: 13px;
+  background: none;
+  border: none;
+  margin: 0;
+  cursor: pointer;
 }

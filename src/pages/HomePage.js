@@ -1,8 +1,11 @@
 import "./pages.css";
+import { Link } from "react-router-dom";
 import img21 from "../images/img21.jpg";
 import img19 from "../images/img19.jpg";
 import img16 from "../images/img16.jpg";
 import img10 from "../images/img10.jpg";
+import profile from "../images/profile.jpg";
+import profile2 from "../images/Profile2.jpeg";
 
 function HomePage() {
   return (
@@ -63,6 +66,8 @@ function HomePage() {
           </p>
         </div>
       </div>
+
+    
     </div>
   );
 }

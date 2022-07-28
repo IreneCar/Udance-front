@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 import Button from "react-bootstrap/Button";
 import "./Navbar.css";
 import "../../custom.scss";
+import Logo from "../../images/logo-03.png";
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -33,6 +34,10 @@ function Navbar() {
           >
             Lessons
           </NavLink>
+        </div>
+
+        <div>
+          <img src={Logo} alt="Dancemy-logo" style={{ height: "25px" }} />
         </div>
 
         {isLoggedIn ? (

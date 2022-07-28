@@ -3,22 +3,18 @@ import { deleteLessonService } from "../../services/profile.services";
 import "./GivenCard.css";
 
 // We are deconstructing props object directly in the parentheses of the function
-function GivenCard({ title, lastDay, firstDay, _id,
-   teacher, students}) {
-    const navigate = useNavigate();
+function GivenCard({ title, lastDay, firstDay, _id, teacher, students }) {
+  const navigate = useNavigate();
 
-    const deleteLesson = async () => {
-      
-      try {
-        
-          await deleteLessonService(_id);
-         
-          navigate("/profile");
-      
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  const deleteLesson = async () => {
+    try {
+      await deleteLessonService(_id);
+
+      navigate("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="GivenCard">
@@ -39,17 +35,22 @@ function GivenCard({ title, lastDay, firstDay, _id,
         </div>
 
         <p className="students"> Students: {students.length}</p>
-        <button onClick={deleteLesson}>delete Lesson</button>
+
         <Link to={`/profile/${_id}/mail`} className="GivenCard-Link">
           Send mail
         </Link>
+
+        <button onClick={deleteLesson} className="delete">
+          Delete Lesson
+        </button>
+
         <Link
           to={`/lessons/${_id}`}
           style={{
             textDecoration: "none",
           }}
         >
-          <button>View more details</button>
+          <button className="GivenCard-button">View more details</button>
         </Link>
       </div>
     </div>

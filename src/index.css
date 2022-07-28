@@ -57,6 +57,7 @@ body {
 }
 
 .AddTask button,
+.container-home-f button,
 .EditLessonPage button,
 .EditProfile button,
 .AddLesson button,
@@ -99,6 +100,7 @@ body {
 }
 
 .AddTask button:hover,
+.container-home-f button:hover,
 .EditLessonPage button:hover,
 .EditProfile button:hover,
 .SignupPage button:hover,
@@ -170,15 +172,6 @@ body {
   user-select: none;
   border: 1px solid #68fbd0;
 }
-
-/* .msl {
-  overflow: hidden;
-  border: 1px solid #3366ff;
-  border-radius: 50px;
-  outline: none;
-  cursor: text;
-  transition: border-radius 0.2s;
-} */
 
 .LoginPage p,
 .SignupPage p {
