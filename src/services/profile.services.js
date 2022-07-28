@@ -24,8 +24,8 @@ const sendMessageService = (lessonId,message) => {
 };
 
 //delete task
-const deleteTaskService = (id) => {
-  return service.delete(`${URL}/${id}`);
+const deleteLessonService = (lessonId) => {
+  return service.delete(`${URL}/${lessonId}/delete`);
 };
 
 //update task
@@ -36,7 +36,7 @@ const updateTaskService = (id, updatedTask) => {
 export {
   getProfileService,
   updateProfileService,
-  deleteTaskService,
+  deleteLessonService,
   updateTaskService,
   getGivedLessonsService,
   getReceivedLessonsService,

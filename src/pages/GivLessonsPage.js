@@ -28,7 +28,8 @@ function GivLessonPage() {
       {loading && <div>Loading...</div>}
       {!loading &&
         givenLessons?.map((lesson) => (
-          <GivenCard key={lesson._id} {...lesson} />
+          <GivenCard key={lesson._id} {...lesson} 
+          getGivenlessons={getGivenLessons}/>
         ))}
     </div>
   );
