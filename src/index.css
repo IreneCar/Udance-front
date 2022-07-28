@@ -134,13 +134,34 @@ body {
 .LoginPage input {
   border: 1px solid #3366ff;
   background-color: white;
-  /* font-size: 15px; */
+  font-size: 11px;
   width: 90%;
   box-sizing: border-box;
   padding: 5px 15px;
   border-radius: 60px;
-  /* color: #3366ff; */
+  color: #464555;
   /* font-weight: 100; */
+}
+
+.EditLessonPage input:focus,
+.EditProfile input:focus,
+.AddTask input:focus,
+.AddLesson input:focus,
+.SignupPage input:focus,
+.LoginPage input:focus {
+  outline: 2px solid #68fbd0;
+  border-color: #68fbd0;
+}
+
+#input-file-bt::-webkit-file-upload-button {
+  background-color: #464555;
+  border-radius: 999px;
+  color: #68fbd0;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  user-select: none;
+  border: 1px solid #68fbd0;
 }
 
 .LoginPage p,

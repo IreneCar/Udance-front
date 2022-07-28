@@ -26,45 +26,15 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/lessons" element={<LessonListPage />} />
 
+          <Route exact path="/lessons/:id" element={<LessonDetailsPage />} />
+
           <Route
-            exact
-            path="/lessons/:id"
-            element={
-             
-                <LessonDetailsPage />
-          
-            }
-          />
-          {/* <Route
-            exact
-            path="/profile"
             element={
               <PrivateRoute>
                 <ProfilePage />
               </PrivateRoute>
             }
-          />
-
-          <Route
-            exact
-            path="/profile/given"
-            element={
-              <PrivateRoute>
-                <GivLessonsPage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            exact
-            path="/profile/received"
-            element={
-              <PrivateRoute>
-                <RecLessonsPage />
-              </PrivateRoute>
-            }
-          /> */}
-
-          <Route element={<PrivateRoute><ProfilePage /></PrivateRoute>}>
+          >
             <Route path="/profile/given" element={<GivLessonsPage />} />
             <Route path="/profile" />
             <Route path="/profile/received" element={<RecLessonsPage />} />
@@ -98,12 +68,6 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <PrivateRoute>
-	<ProjectListPage />
-</PrivateRoute> */
-}
 
 // exact
 // path="/login"

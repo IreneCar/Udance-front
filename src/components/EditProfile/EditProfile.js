@@ -5,24 +5,17 @@ import { useOutletContext } from "react-router-dom";
 import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
-
-
 function EditProfile() {
   const {setUser} = useContext(AuthContext);
   const [getProfile,profile] = useOutletContext();
   const [data,setData]=useState(profile)
   
-  
-  
- 
-
   const navigate = useNavigate();
 
- const handleChange = (name) =>(e)=>{
-   const value = name==="image" ? e.target.files[0]:e.target.value
-   setData({...data,[name]:value})
- }
- 
+  const handleChange = (name) => (e) => {
+    const value = name === "image" ? e.target.files[0] : e.target.value;
+    setData({ ...data, [name]: value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,26 +40,9 @@ function EditProfile() {
        
      }
 
-
-
    } catch (error) {
      console.log(error)
    }
-
-
-
-    // Send the token through the request "Authorization" Headers
-   
-     
-      
-    
-   
-   
-      
-     
-     
-     
-   
   };
 
   return (
@@ -82,14 +58,13 @@ function EditProfile() {
           onChange={handleChange("name")}
         />
 
-        <label>Image:</label>
+        <label for="input-file-bt">Image:</label>
         <input
+          id="input-file-bt"
           type="file"
           name="image"
-         
           onChange={handleChange("image")}
         />
-        
 
         <label>Description:</label>
         <input
@@ -106,7 +81,7 @@ function EditProfile() {
           value={data.danceStyles}
           onChange={handleChange("danceStyles")}
         />
-     
+
         <button type="submit">Submit</button>
       </form>
     </div>
