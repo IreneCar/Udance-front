@@ -31,7 +31,8 @@ body {
 .EditLessonPage,
 .EditProfile,
 .AddLesson,
-.AddTask {
+.AddTask,
+.SendMail {
   background: white;
   box-shadow: #aba7cc 0px 6px 20px 0px;
   width: 100%;
@@ -48,7 +49,8 @@ body {
 .AddTask form,
 .AddLesson form,
 .SignupPage form,
-.LoginPage form {
+.LoginPage form,
+.SendMail form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +59,8 @@ body {
 .AddTask button,
 .EditLessonPage button,
 .EditProfile button,
-.AddLesson button {
+.AddLesson button,
+.SendMail button {
   display: block;
   background-color: #3366ff;
   border-radius: 999px;
@@ -100,7 +103,8 @@ body {
 .EditProfile button:hover,
 .SignupPage button:hover,
 .LoginPage button:hover,
-.AddLesson button:hover {
+.AddLesson button:hover,
+.SendMail button:hover {
   display: block;
   background-color: white;
   border-radius: 999px;
@@ -120,7 +124,8 @@ body {
 .AddTask label,
 .AddLesson label,
 .SignupPage label,
-.LoginPage label {
+.LoginPage label,
+.SendMail label {
   color: #3366ff;
   font-size: 15px;
   padding: 15px 15px 5px 15px;
@@ -131,7 +136,8 @@ body {
 .AddTask input,
 .AddLesson input,
 .SignupPage input,
-.LoginPage input {
+.LoginPage input,
+.SendMail input {
   border: 1px solid #3366ff;
   background-color: white;
   font-size: 11px;
@@ -148,7 +154,8 @@ body {
 .AddTask input:focus,
 .AddLesson input:focus,
 .SignupPage input:focus,
-.LoginPage input:focus {
+.LoginPage input:focus,
+.SendMail input:focus {
   outline: 2px solid #68fbd0;
   border-color: #68fbd0;
 }
@@ -162,6 +169,10 @@ body {
   padding: 3px 10px;
   user-select: none;
   border: 1px solid #68fbd0;
+}
+
+.msl-vars::--active-menu-shadow {
+  border: 1px 1px 5px 0px #3366ff;
 }
 
 .LoginPage p,

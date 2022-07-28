@@ -2,14 +2,11 @@ import { Link } from "react-router-dom";
 import "./GivenCard.css";
 
 // We are deconstructing props object directly in the parentheses of the function
-function GivenCard({ title, lastDay, firstDay, _id, teacher }) {
+function GivenCard({ title, lastDay, firstDay, _id, teacher, students }) {
   return (
     <div className="GivenCard">
       <div className="circular-portrait" style={{ margin: "0px" }}>
-        <img
-          src={teacher.imageUrl}
-          alt="teacher"
-        />
+        <img src={teacher.imageUrl} alt="teacher" />
       </div>
       <div className="GivenCard-wrapInfo">
         <h3>{title}</h3>
@@ -23,6 +20,8 @@ function GivenCard({ title, lastDay, firstDay, _id, teacher }) {
             <p>{lastDay}</p>
           </div>
         </div>
+
+        <p className="students"> Students: {students.length}</p>
 
         <Link to={`/profile/${_id}/mail`} className="GivenCard-Link">
           Send mail

@@ -3,8 +3,9 @@
   color: #36f;
   padding: 0px 20px;
   box-shadow: #aba7cc 0px 6px 20px 0px;
-  min-width: 49%;
-  margin-bottom: 15px;
+  min-width: 300px;
+  max-width: 40%;
+  margin: 8px;
   padding: 20px 5px;
   border-radius: 6px;
 
@@ -104,4 +105,8 @@
   padding: 5px 18px;
   user-select: none;
   text-decoration: none !important;
+}
+
+.students {
+  margin: 0 !important;
 }
