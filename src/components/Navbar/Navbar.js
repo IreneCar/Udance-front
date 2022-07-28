@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 import Button from "react-bootstrap/Button";
@@ -10,23 +10,40 @@ function Navbar() {
   // the values from AuthContext.Provider `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
+  let activeStyle = {
+    textDecoration: "none",
+    color: "#68fbd0",
+  };
+
   return (
     <nav className="navBarStyle">
       <div className="wrap-nav">
         <div>
-          <Link className="navBarLink" to="/">
+          <NavLink
+            className="navBarLink"
+            to="/"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Home
-          </Link>
-          <Link className="navBarLink" to="/lessons">
+          </NavLink>
+          <NavLink
+            className="navBarLink"
+            to="/lessons"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Lessons
-          </Link>
+          </NavLink>
         </div>
 
         {isLoggedIn ? (
           <div>
-            <Link className="navBarLink" to="/profile">
+            <NavLink
+              className="navBarLink"
+              to="/profile"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
               Profile
-            </Link>
+            </NavLink>
             <Button
               className="space-between"
               variant="outline-primary"
