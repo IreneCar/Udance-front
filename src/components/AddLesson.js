@@ -15,12 +15,11 @@ function AddLesson(props) {
   const [details, setDetails] = useState("");
   const [cohost, setCohost] = useState("");
 
-
   var date = new Date(Date.now()); // Date 2011-05-09T06:08:45.178Z
   var year = date.getFullYear();
   var month = ("0" + (date.getMonth() + 1)).slice(-2);
   var day = ("0" + date.getDate()).slice(-2);
-  var today=`${year}-${month}-${day}`
+  var today = `${year}-${month}-${day}`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +35,6 @@ function AddLesson(props) {
       price,
       details,
       cohost,
-     
     };
 
     // Send the token through the request "Authorization" Headers
@@ -53,15 +51,12 @@ function AddLesson(props) {
       setPrice("");
       setDetails("");
       setCohost("");
-     
+
       props.refreshProjects();
     } catch (err) {
       console.log(err);
     }
   };
-
-  //Multi-select
-  const [value, setvalue] = useState("");
 
   const handleOnchange = (val) => {
     setStyles(val);
@@ -188,8 +183,6 @@ function AddLesson(props) {
           value={cohost}
           onChange={(e) => setCohost(e.target.value)}
         />
-
-   
 
         <button type="submit">Submit</button>
       </form>
