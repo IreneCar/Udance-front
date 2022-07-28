@@ -3,6 +3,7 @@ import { addNewLessonService } from "../services/lesson.services.js";
 import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
 
+
 function AddLesson(props) {
   const [title, setTitle] = useState("");
   const [styles, setStyles] = useState("");
@@ -86,17 +87,6 @@ function AddLesson(props) {
     { label: "Belly Dance", value: " Belly Dance" },
   ];
 
-  let multiple = {
-    border: "1px solid #3366ff",
-    backgroundColor: "white",
-    fontSize: "11px",
-    width: "90%",
-    boxSizing: "border-box",
-    padding: "5px 15px",
-    borderRadius: "60px",
-    color: "#464555",
-  };
-
   return (
     <div className="AddLesson">
       <h3>Add Lesson</h3>
@@ -111,11 +101,7 @@ function AddLesson(props) {
         />
 
         <label>Styles:</label>
-        <MultiSelect
-          onChange={handleOnchange}
-          options={options}
-          style={multiple}
-        />
+        <MultiSelect onChange={handleOnchange} options={options} />
 
         <label>Location:</label>
         <input

@@ -171,9 +171,14 @@ body {
   border: 1px solid #68fbd0;
 }
 
-.msl-vars::--active-menu-shadow {
-  border: 1px 1px 5px 0px #3366ff;
-}
+/* .msl {
+  overflow: hidden;
+  border: 1px solid #3366ff;
+  border-radius: 50px;
+  outline: none;
+  cursor: text;
+  transition: border-radius 0.2s;
+} */
 
 .LoginPage p,
 .SignupPage p {
@@ -202,4 +207,20 @@ body {
 
 .TaskCard {
   background-color: #dfeef9;
+}
+
+.SendMail {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+  border: 1px solid #3366ff;
+  border-radius: 6px;
+}
+
+.SendMail[contenteditable]:empty::before {
+  content: "Write anything to your students...";
+  color: #68fbd0;
 }
