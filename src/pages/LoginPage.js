@@ -27,6 +27,7 @@ function LoginPage(props) {
     } catch (err) {
       const errorDescription = err?.response?.data?.message;
       setErrorMessage(errorDescription);
+      console.log(err)
     }
   };
 

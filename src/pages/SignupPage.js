@@ -23,7 +23,7 @@ function SignupPage(props) {
       navigate("/login");
     }catch(err){
       if(err.response?.status === 400){
-        setErrorMessage(err.response.data.errorMessage);
+        setErrorMessage(err.response.data.message);
         console.log(errorMessage);
       }
     }
@@ -45,8 +45,8 @@ function SignupPage(props) {
 
 				<button type="submit">Sign Up</button>
 			</form>
-
 			{errorMessage && <p className="error-message">{errorMessage}</p>}
+
 
 			<p>Already have account?</p>
 			<Link to={'/login'} className='linkLogin'> Login</Link>
