@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import LessonCard from "../components/LessonCard/LessonCard";
 import GivenCard from "../components/GivenCard/GivenCard";
 import { getGivedLessonsService } from "../services/profile.services";
 

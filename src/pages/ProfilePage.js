@@ -8,7 +8,7 @@ import addIcon from "../images/addIcon-01.png";
 
 function ProfilePage(props) {
   const [profile, setProfile] = useState("profile");
-  const [edited, setEdited] = useState(false);
+ 
 
   const getProfile = async () => {
     try {

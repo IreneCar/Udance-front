@@ -8,7 +8,7 @@ import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "../context/auth.context"; // <== IMPORT
 
 function LessonDetailsPage(props) {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn,user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [lesson, setLesson] = useState(null);
   const { id } = useParams();
@@ -19,6 +19,7 @@ function LessonDetailsPage(props) {
     try {
       const response = await getLessonDetailsService(id);
       setLesson(response.data);
+      
     } catch (err) {
       console.log(err);
     }
@@ -50,6 +51,16 @@ function LessonDetailsPage(props) {
       console.log(err);
     }
   };
+
+
+
+  var date = new Date(Date.now()); // Date 2011-05-09T06:08:45.178Z
+  var year = date.getFullYear();
+  var month = ("0" + (date.getMonth() + 1)).slice(-2);
+  var day = ("0" + date.getDate()).slice(-2);
+  var today=`${year}-${month}-${day}`
+
+ 
 
   return (
     <div className="LessonDetails">
@@ -110,9 +121,12 @@ function LessonDetailsPage(props) {
               {lesson.price} €
             </p>
           </div>
-
-          <button onClick={joinLesson}>Join Lesson</button>
+          {(today<=lesson.firstDay)&&isLoggedIn?
+          !lesson.students.includes(user._id)?
+          <button onClick={joinLesson}>Join Lesson</button>:
           <button onClick={dropOffLesson}>Drop Off Lesson</button>
+          :<button onClick={joinLesson}>Join Lesson</button>}
+
         </div>
       )}
       <Link to="/lessons">
