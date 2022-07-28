@@ -9,13 +9,14 @@ function MailForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setMessage(message)
     const newMessage = {
       message,
     };
 
     // Send the token through the request "Authorization" Headers
     try {
+     
       await sendMessageService(lessonId, newMessage);
 
       setMessage("");
@@ -32,15 +33,29 @@ function MailForm(props) {
 
       <form onSubmit={handleSubmit}>
         <label>Message:</label>
-        <input
-          type="text"
+        <textarea
+         
+          required
           name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
+        
 
         <button type="submit">Send</button>
       </form>
+
+    {/* <form onSubmit={handleSubmit}>
+   <label for="text">Description:</label>
+   <br/>
+   <textarea id="text" name="message" rows="2" cols="50"
+   
+   ></textarea>
+   <br/>
+   <input type="submit" value={message}/>
+    </form> */}
+
+      
     </div>
   );
 }
