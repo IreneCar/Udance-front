@@ -2,12 +2,11 @@ import service from "./service";
 
 const URL = "/profile";
 
-//add new task
 const getProfileService = () => {
   return service.get(`${URL}`);
 };
 
-//update profile
+
 const updateProfileService = (updatedProfile) => {
   return service.put(`${URL}/edit`, updatedProfile);
 };
@@ -23,21 +22,16 @@ const sendMessageService = (lessonId,message) => {
   return service.post(`${URL}/${lessonId}/send-email`,message);
 };
 
-//delete task
-const deleteTaskService = (id) => {
-  return service.delete(`${URL}/${id}`);
+const deleteLessonService = (lessonId) => {
+  return service.delete(`${URL}/${lessonId}/delete`);
 };
 
-//update task
-const updateTaskService = (id, updatedTask) => {
-  return service.put(`${URL}/${id}`, updatedTask);
-};
+
 
 export {
   getProfileService,
   updateProfileService,
-  deleteTaskService,
-  updateTaskService,
+  deleteLessonService,
   getGivedLessonsService,
   getReceivedLessonsService,
   sendMessageService,
