@@ -61,7 +61,7 @@ function LessonDetailsPage(props) {
           <h1>{lesson.title}</h1>
           <div className="LessonDetails-wrap-row2">
             <h5>Teacher:</h5>
-            <p>{lesson.teacher}</p>
+            <p>{lesson.teacher.name}</p>
           </div>
           <div className="LessonDetails-wrap-row2">
             <h5>Cohosts:</h5>
