@@ -67,7 +67,36 @@ function HomePage() {
         </div>
       </div>
 
-    
+      <div className="container-home-f" style={{ width: "auto !important" }}>
+        <div className="container-home-col">
+          <div className="circular-portrait">
+            <img src={profile2} alt="minion-peluca" />
+          </div>
+          <h6>Rubén Gómez</h6>
+          <a
+            href="https://github.com/RubenGH88"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <button>GitHub</button>
+          </a>
+        </div>
+        <div className="container-home-col">
+          <div className="circular-portrait">
+            <img src={profile} alt="minion-peluca" />
+          </div>
+          <h6>Irene Carrión</h6>
+          <a
+            href="https://github.com/IreneCar"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <button>GitHub</button>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

@@ -223,15 +223,19 @@
   object-fit: cover;
 }
 
+/* --------------------- home footer --------------------- */
 .container-home-f {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   align-content: stretch;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  border: 3px solid #68f3d0;
+  border-radius: 15px;
+  padding: 35px;
 }
 
 .container-home-f h6 {
