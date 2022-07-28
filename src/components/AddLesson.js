@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { addNewLessonService } from "../services/lesson.services.js";
-import { useContext } from "react";
-import { AuthContext } from "../context/auth.context";
 
 function AddLesson(props) {
-  const { user } = useContext(AuthContext);
 
-  const teacher = user.name;
+
+
   const [title, setTitle] = useState("");
   const [styles, setStyles] = useState("");
   const [location, setLocation] = useState("");
@@ -23,7 +21,6 @@ function AddLesson(props) {
     e.preventDefault();
 
     const newLesson = {
-      teacher,
       title,
       styles,
       location,

@@ -7,7 +7,7 @@ function ProjectCard({ title, lastDay, firstDay, _id, teacher }) {
     <div className="LessonCard">
       <div className="circular-portrait" style={{ margin: "0px" }}>
         <img
-          src="https://www.kindpng.com/picc/m/353-3534825_cool-profile-avatar-picture-cool-profile-hd-png.png"
+          src={teacher.imageUrl}
           alt="teacher"
         />
       </div>
@@ -15,7 +15,7 @@ function ProjectCard({ title, lastDay, firstDay, _id, teacher }) {
         <h3>{title}</h3>
 
         <div className="LessonCard-info">
-          <h6>{teacher}</h6>
+          <h6>{teacher.name}</h6>
 
           <div className="LessonCard-date">
             <p>{firstDay}</p>
