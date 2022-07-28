@@ -6,10 +6,10 @@ import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "../../context/auth.context"; // <== IMPORT
 
 function EditProfile() {
-  const { setUser } = useContext(AuthContext);
-  const [getProfile, profile, setProfile] = useOutletContext();
-  const [data, setData] = useState(profile);
-
+  const {setUser} = useContext(AuthContext);
+  const [getProfile,profile] = useOutletContext();
+  const [data,setData]=useState(profile)
+  
   const navigate = useNavigate();
 
   const handleChange = (name) => (e) => {
@@ -20,33 +20,29 @@ function EditProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      let formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("image", data.image);
-      formData.append("imageId", data.imageId);
-      formData.append("description", data.description);
-      formData.append("danceStyles", data.danceStyles);
-      formData.append("existingId", data.imageId);
-      formData.append("existingUrl", data.imageUrl);
-      const res = await updateProfileService(formData);
+   try {
+     let formData = new FormData();
+     formData.append("name",data.name);
+     formData.append("image",data.image);
+     formData.append("imageId",data.imageId);
+     formData.append("description",data.description);
+     formData.append("danceStyles",data.danceStyles);
+     formData.append("existingId",data.imageId);
+     formData.append("existingUrl",data.imageUrl);
+     const res =await updateProfileService(formData);
+     
+     if(res.status===200){
+      const newUser = { name:data.name};
+    
+      getProfile()
+      setUser(newUser)
+       navigate("/profile");
+       
+     }
 
-      if (res.status === 200) {
-        console.log("yes");
-        getProfile();
-        navigate("/profile");
-        window.location.reload();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-
-    // Send the token through the request "Authorization" Headers
-    try {
-      setUser();
-    } catch (err) {
-      console.log(err);
-    }
+   } catch (error) {
+     console.log(error)
+   }
   };
 
   return (

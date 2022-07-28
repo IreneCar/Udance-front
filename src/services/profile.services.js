@@ -19,6 +19,9 @@ const getGivedLessonsService = () => {
 const getReceivedLessonsService = () => {
   return service.get(`${URL}/received`);
 };
+const messageService = (lessonId,message) => {
+  return service.post(`${URL}/${lessonId}/send-email`,message);
+};
 
 //delete task
 const deleteTaskService = (id) => {
@@ -37,4 +40,5 @@ export {
   updateTaskService,
   getGivedLessonsService,
   getReceivedLessonsService,
+  messageService,
 };

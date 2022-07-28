@@ -24,7 +24,7 @@ function ProfilePage(props) {
   };
 
   useEffect(() => {
-    console.log("use efect profile")
+    
     getProfile();
     // eslint-disable-next-line
   }, []);

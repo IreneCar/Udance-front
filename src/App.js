@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AddLesson from "./components/AddLesson";
 import EditProfile from "./components/EditProfile/EditProfile";
+import MailForm from "./components/MailForm";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/profile/received" element={<RecLessonsPage />} />
             <Route path="/profile/newLesson" element={<AddLesson />} />
             <Route path="/profile/edit" element={<EditProfile />} />
+            <Route exact path="/:id/mail" element={<MailForm />} />
           </Route>
 
           <Route
