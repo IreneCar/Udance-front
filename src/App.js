@@ -40,7 +40,7 @@ function App() {
             <Route path="/profile/received" element={<RecLessonsPage />} />
             <Route path="/profile/newLesson" element={<AddLesson />} />
             <Route path="/profile/edit" element={<EditProfile />} />
-            <Route exact path="/:id/mail" element={<MailForm />} />
+            <Route exact path="/profile/:lessonId/mail" element={<MailForm />} />
           </Route>
 
           <Route

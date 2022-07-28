@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { sendMessageService } from "../../services/lesson.services.js";
+import { sendMessageService } from "../services/profile.services";
 import { useParams} from "react-router-dom";
 
 
 function MailForm(props) {
  const { lessonId } = useParams();
-
 
   const [message, setMessage] = useState("");
   
@@ -13,11 +12,14 @@ function MailForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
+    const newMessage = {
+      message,
+    
+    };
   
     // Send the token through the request "Authorization" Headers
     try {
-      await sendMessageService(lessonId,message);
+      await sendMessageService(lessonId,newMessage);
     
       setMessage("");
      

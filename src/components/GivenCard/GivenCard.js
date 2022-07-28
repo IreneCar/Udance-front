@@ -24,7 +24,7 @@ function GivenCard({ title, lastDay, firstDay, _id, teacher }) {
           </div>
         </div>
 
-        <Link to={"#"} className="GivenCard-Link">
+        <Link to={`/profile/${_id}/mail`} className="GivenCard-Link">
           Send mail
         </Link>
         <Link

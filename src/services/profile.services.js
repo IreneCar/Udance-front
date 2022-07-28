@@ -19,7 +19,7 @@ const getGivedLessonsService = () => {
 const getReceivedLessonsService = () => {
   return service.get(`${URL}/received`);
 };
-const messageService = (lessonId,message) => {
+const sendMessageService = (lessonId,message) => {
   return service.post(`${URL}/${lessonId}/send-email`,message);
 };
 
@@ -40,5 +40,5 @@ export {
   updateTaskService,
   getGivedLessonsService,
   getReceivedLessonsService,
-  messageService,
+  sendMessageService,
 };
